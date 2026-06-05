@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jfmodal.css">
+    <script src="jfmodal.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-button">
+            <button type="button" id="btnOpenModal" class="btn-trigger">Open here...</button>
+            <button type="button" id="btnLoader" class="btn-trigger">Show loader</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('btnOpenModal').addEventListener('click', () => {
+            // Llamamos a tu modal personalizado
+            JFModal.fire({
+                title: 'Confirmación',
+                text: '¿Estás seguro de que deseas continuar con esta acción?',
+                icon: 'success',
+                showOKButton: false,     // Ocultamos Aceptar
+                showYesButton: true,     // Mostramos Si
+                showNoButton: true,      // Mostramos No
+                // yesButtonColor: '#2ecc71', // Color personalizado opcional
+                // noButtonColor: '#e74c3c'   // Color personalizado opcional
+            }).then((result) => {
+                // Aquí manejas la respuesta del usuario
+                if (result.value === 'yes') {
+                    alert('Presionaste que SÍ');
+                }
+            });
+        });
+        document.getElementById('btnLoader').addEventListener('click', () => {
+            // Llamamos a tu modal personalizado
+            JFModal.fire({
+                title: 'Procesando...',
+                text: 'Por favor, espera un momento mientras validamos tus datos.',
+                loaderType: 'spinner',
+                didOpen: () => {
+                    JFModal.showLoading();                    
+                    // Simulamos una tarea asíncrona que tarda 3 segundos (como un Fetch a tu API)
+                    setTimeout(() => {
+                        // Cuando la tarea termina, cerramos de forma segura el loader
+                        JFModal.close();
+                        // Encadenamos un segundo modal avisando que todo salió bien
+                        JFModal.fire({
+                            title: '¡Operación Exitosa!',
+                            text: 'Tu solicitud ha sido procesada correctamente.',
+                            icon: 'success',
+                            showOKButton: true,
+                            okButtonColor: '#2ecc71'
+                        });
+                    }, 3000); // 3000 milisegundos = 3 segundos
+                }
+            });
+        });
+    </script>
+</body>
+</html>
