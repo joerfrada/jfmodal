@@ -7,6 +7,7 @@ class JFModal {
     const defaults = {
       title: '',
       text: '',
+      html: null,
       icon: 'info', // 'success', 'error', 'warning', 'info'
       
       // Visibilidad de botones (true para mostrar, false para ocultar)
@@ -70,6 +71,8 @@ class JFModal {
 
       // Aplicar color dinámico al encabezado usando Variables CSS
       const headerStyle = config.headerColor ? `style="--header-bg: ${config.headerColor};"` : '';
+      // Si config.html existe, usa ese HTML. Si no, usa el <p> con config.text
+      const bodyContentHTML = config.html ? config.html : `<p>${config.text}</p>`;
 
       // Inyectar tu estructura HTML exacta usando la función del SVG
       modalElement.innerHTML = `
@@ -87,7 +90,7 @@ class JFModal {
                         ${this._getLoaderHTML(config.loaderType)}
                     </div>
                     <div class="jfmodal-text">
-                        <p>${config.text}</p>
+                        ${bodyContentHTML}
                     </div>
                 </div>
             </div>
