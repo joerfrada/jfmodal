@@ -1,3 +1,10 @@
+@font-face {
+    font-display: fallback;
+    font-family: 'Oracle Sans';
+    font-weight: 100;
+    src: url(OracleSans_W_ULt.woff2) format('woff2'), url(OracleSans_W_ULt.woff) format('woff');
+}
+
 * {
     margin: 0;
     padding: 0;
