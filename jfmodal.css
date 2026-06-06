@@ -117,15 +117,15 @@
 } */
 
 .jfmodal-btn-default {
-    --btn-color: #1d9bf0;
+    --btn-color: #056ac8;
 }
 
 .jfmodal-btn-success {
-    --btn-color: green;
+    --btn-color: #278701;
 }
 
 .jfmodal-btn-danger {
-    --btn-color: red;
+    --btn-color: #cb1100;
 }
 
 .svg-icon {
