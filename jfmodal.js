@@ -76,6 +76,7 @@ class JFModal {
         <div class="jfmodal-inner">
             <div class="jfmodal-header ${headerStyle}">
                 <span>${config.title}</span>
+                <div class="close-icon"><svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M626.723881 334.476841 512 449.200722 397.275095 334.476841l-62.799278 62.799278 114.724905 114.724905L334.475817 626.723881l62.799278 62.799278 114.724905-114.724905 114.724905 114.724905 62.799278-62.799278L574.798255 512l114.724905-114.724905L626.723881 334.476841zM512 68.191078c-245.204631 0-443.808922 198.60429-443.808922 443.808922s198.60429 443.808922 443.808922 443.808922 443.808922-198.60429 443.808922-443.808922S757.203608 68.191078 512 68.191078zM512 867.046319c-195.71959 0-355.047342-159.327752-355.047342-355.047342s159.327752-355.047342 355.047342-355.047342 355.047342 159.327752 355.047342 355.047342S707.71959 867.046319 512 867.046319z"  /></svg></div>
             </div>
             <div class="jfmodal-body">
                 <div class="jfmodal-body-inner">
@@ -135,6 +136,11 @@ class JFModal {
         });
       }
 
+      modalElement.querySelector('.close-icon').addEventListener('click', () => {
+        closeModal();
+        resolve({ isConfirmed: false, value: 'cancel' });
+      });
+
       if (typeof config.didOpen === 'function') {
         config.didOpen();
       }
@@ -149,10 +155,12 @@ class JFModal {
     const iconContainer = modal.querySelector('.jfmodal-icon');
     const loaderContainer = modal.querySelector('.jfmodal-loader');
     const footerContainer = modal.querySelector('.jfmodal-footer');
+    const closeIconContainer = modal.querySelector('.close-icon');
 
     // Ocultar ícono y pie de página con botones
     if (iconContainer) iconContainer.style.display = 'none';
     if (footerContainer) footerContainer.style.display = 'none';
+    if (closeIconContainer) closeIconContainer.style.display = 'none';
     
     // Mostrar la animación del cargador de manera centrada
     if (loaderContainer) loaderContainer.style.display = 'block';
