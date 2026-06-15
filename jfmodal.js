@@ -140,6 +140,13 @@ class JFModal {
         });
       }
 
+      if (config.showDefaultButton) {
+        modalElement.querySelector('.btn-jf-default').addEventListener('click', () => {
+          closeModal();
+          resolve({ isConfirmed: true, value: 'other' });
+        });
+      }
+
       if (typeof config.didOpen === 'function') {
         config.didOpen();
       }
