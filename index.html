@@ -20,16 +20,19 @@
             // Llamamos a tu modal personalizado
             JFModal.fire({
                 title: 'Confirmación',
-                text: '¿Estás seguro de que deseas continuar con esta acción?',
+                // text: '¿Estás seguro de que deseas continuar con esta acción?',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales mollis urna, et consectetur purus rutrum sit amet. Vestibulum non elit vestibulum, facilisis massa et, laoreet lacus.',
+                // html: '<h3>El sistema se cerrará por inactividad</h3>',
                 icon: 'success',
                 showOKButton: false,     // Ocultamos Aceptar
                 showYesButton: true,     // Mostramos Si
                 showNoButton: true,      // Mostramos No
+                showDefaultButton: true, // Mostramos Button
                 // yesButtonColor: '#2ecc71', // Color personalizado opcional
                 // noButtonColor: '#e74c3c'   // Color personalizado opcional
             }).then((result) => {
                 // Aquí manejas la respuesta del usuario
-                if (result.value === 'yes') {
+                if (result.value == 'yes') {
                     alert('Presionaste que SÍ');
                 }
             });
