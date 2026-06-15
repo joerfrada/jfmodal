@@ -207,9 +207,7 @@ class JFModal {
         <svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1001.661867 796.544c48.896 84.906667 7.68 157.013333-87.552 157.013333H110.781867c-97.834667 0-139.050667-69.504-90.112-157.013333l401.664-666.88c48.896-87.552 128.725333-87.552 177.664 0l401.664 666.88zM479.165867 296.533333v341.333334a32 32 0 1 0 64 0v-341.333334a32 32 0 1 0-64 0z m0 469.333334v42.666666a32 32 0 1 0 64 0v-42.666666a32 32 0 1 0-64 0z" fill="#FAAD14" /></svg>
       `,
       info: `
-        <svg class="svg-icon" style="width: 1em; height: 1em; vertical-align: middle; fill: currentColor; overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z m32 512a32 32 0 0 1-64 0v-192a32 32 0 0 1 64 0z m0-256a32 32 0 1 1-32-32 32 32 0 0 1 32 32z" fill="#3fc3ee" />
-        </svg>
+        <svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 310.277 310.277" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M155.139,0C69.592,0,0,69.598,0,155.139c0,85.547,69.598,155.139,155.139,155.139 s155.139-69.592,155.139-155.139S240.686,0,155.139,0z M167.454,248.502h-24.363V114.48h24.363V248.502z M154.721,91.77 c-8.58,0-14.678-6.647-14.678-14.953c0-8.58,6.373-15.227,15.227-15.227c9.141,0,14.965,6.647,14.965,15.227 C170.497,85.123,164.411,91.77,154.721,91.77z" fill="#3b58c7"/></svg>
       `
     };
 
